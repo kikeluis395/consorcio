@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,400;0,500;0,600;0,700;0,900;1,400&display=swap');
+
+@import 'base/variables';
+@import 'base/base';
+
+@import 'components/header';
+@import 'components/footer';
+
+@import 'paquete5';
+@import 'paquete6';
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; // remove the gap so it doesn't close
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  color: #fff;
+  background-color: $primary-active;
+}
+
+.btn-cerrado {
+  background: #6d6d6d;
+  color: #fff;
+}
+
+.btn-consorcio {
+  background: $secundary-active;
+  color: #fff;
+  // border: 1px solid $secundary-color;
+  border-radius: 25px;
+  padding: .5rem 1.5rem;
+  font-weight: 600;
+  margin: 0 auto;
+  &:hover {
+    background: $secundary-color;
+    color: #fff;
+  }
+}
+
+
+.home {
+  width: 100%;
+  height: 100%;
+  background: url('/images/bg-home.jpg');
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(#000,.5);
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 8;
+
+    h1 {
+      color: #fff;
+      font-weight: 500;
+      font-size: 4rem;
+      strong {
+        font-weight: 700;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0 0 ;
+      li {
+        margin-bottom: .5rem;
+        span {
+          // opacity: 0;
+          margin-left: -50px;
+          color: #fff;
+          // text-transform: uppercase;
+          opacity: 0;
+          transition: all .2s;
+        }
+        a {
+          font-size: 1.3rem;
+          color: #fff;
+          text-decoration: none;
+
+        }
+        &:hover span {
+          margin-left: 100px;
+          opacity: .7;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+
+    height: 700;
+    padding: 3rem 0;
+    &__content {
+      font-size: 15px;
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.registro {
+  padding: 3rem 0;
+}
+
+.consorcio {
+
+  &__head {
+    width: 100%;
+    height: 400px;
+    background: url('/images/consorcio_bg_header.jpg');
+    background-size: cover;
+    background-position: top center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // margin-bottom: 100px;
+    h1 {
+      color: #fff;
+    }
+  }
+
+  &__orion {
+    width: 100%;
+    display: flex;
+    &-brand {
+      width: 50%;
+      height: 500px;
+      background: $primary-active;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-about {
+      width: 50%;
+      height: 500px;
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+      position: relative;
+      background: url('/images/team-orion.png');
+      background-size: cover;
+   
+      h1 {
+        // width: 100%;
+        font-weight: 900;
+        font-size: 8em;
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+         -webkit-text-stroke-color: #dce8f2;
+      }
+      p{
+        background: #fff;
+        font-size: 18px;
+        padding: 2rem;
+        color: $primary-active;
+        transform: translateX(-100px);
+        text-align: justify;
+      }
+    }
+  }
+  &__gcz {
+    width: 100%;
+    display: flex;
+    
+    &-brand {
+      width: 50%;
+      height: 500px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      order: 2;
+    }
+    &-about {
+      width: 50%;
+      height: 500px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 2rem;
+      position: relative;
+      background: url('/images/team-gcz.png');
+      background-size: cover;
+      h1 {
+        font-weight: 900;
+        font-size: 8em;
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+         -webkit-text-stroke-color: #dce8f2;
+      }
+      p{
+        text-align: justify;
+        background: #fff;
+        font-size: 18px;
+        padding: 2rem;
+        color: #000;
+        transform: translateX(100px);
+        
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    
+    &__head {
+      height: 300px;
+      background-position: bottom center;
+      h1 {
+        transform: translateY(30px);
+        font-size: 2rem;
+      }
+    }
+
+    &__orion {
+      flex-direction: column;
+
+      &-brand {
+        width: 100%;
+        height: 300px;
+      }
+      &-about {
+        width: 100%;
+        padding: .5rem;
+        align-items: center;
+        p {
+          position: relative;
+          transform: translate(0);
+          font-size: 16px;
+          background: transparent;
+        }
+      }
+    }
+
+    &__gcz {
+      flex-direction: column;
+
+      &-brand {
+        width: 100%;
+        order: 1;
+        height: 300px;
+      }
+      &-about {
+        width: 100%;
+        order: 2;
+        padding: .5rem;
+        align-items: center;
+        p {
+          position: relative;
+          transform: translate(0);
+          font-size: 16px;
+          background: transparent;
+        }
+      }
+    }
+  }
+  
+}
+
+.off {
+  background: #6d6d6d!important;
+}
+
+.convocatoria {
+  background: red;
+
+  &__alcance {
+    margin-bottom: 2rem;
+    h5 {
+      font-size: 1rem;
+    }
+    ul {
+      // margin: 0;
+      padding-left: 1rem;
+    }
+  }
+  &__content {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem 2rem 4rem 2rem;
+    // margin: 2rem 0;
+    border-radius: 10px;
+    background: #fff;
+    position: relative;
+    &-registro {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      margin-left: -123px;
+      // background: #6d6d6d;
+      border-radius: 25px;
+      color: #fff;
+      padding: .5rem 1.5rem;
+    }
+  }
+
+ 
+
+  &__head {
+    width: 100%;
+    height: 400px;
+    background: $secundary-color;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    &-content {
+      margin-bottom: 2rem;
+    }
+
+
+    h5 {
+      color: #fff;
+      font-weight: 600;
+      font-size: 20px;
+      i {
+        font-size: 14px;
+        opacity: .6;
+        margin: 0 5px;
+      }
+    }
+    h2 {
+      color: #fff;
+    }
+    p {
+      color: #fff;
+    }
+    span {
+      // background: #fff;
+      color: #ffff;
+      text-decoration: none!important;
+  
+    }
+  }
+
+  &__empresas {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+  }
+}
+.btn-politica {
+  border: 1px solid $primary-active;
+  border-radius: 25px;
+  color: $primary-active!important;
+  // background: $primary-active;
+  margin-left: 10px;
+  padding-right: 1rem!important;
+  padding-left: 1rem!important;
+
+  &:hover {
+    color: #fff!important;
+    background: $primary-active;
+    border: 1px solid $primary-color;
+  }
+  @media only screen and (max-width: 900px) {
+    display: inline-block!important;
+    margin: 0;
+  }
+}
+
+
+.politica {
+  width: 100%;
+
+  &__head {
+    width: 100%;
+    height: 400px;
+    background: $secundary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: #fff;
+      transform: translateY(25px);
+    }
+  }
+  &__content {
+    padding: 3rem 0;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 18px;
+    color: #6d6d6d;
+  }
+}

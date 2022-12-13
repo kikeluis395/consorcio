@@ -1,0 +1,32 @@
+body {
+  background: $background; 
+  font-family: $font;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $font;
+  font-weight: 700;
+  color: $primary-color;
+}
+h5{
+  font-size: 20px;
+  line-height: calc(20px*1.2);
+}
+h4{
+  font-size: 25px;
+  line-height: calc(25px*1.2);
+}
+h3{
+  font-size: 32px;
+  line-height: calc(32px*1.2);
+}
+h2{
+  font-size: 40px;
+  line-height: calc(40px*1.2);
+}
+h1{
+  font-size: 49px;
+  line-height: calc(49px*1.2);
+}

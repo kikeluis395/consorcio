@@ -1,0 +1,213 @@
+.paquete5 {
+  .active {
+    color: #fff;
+  }
+  &__head {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      
+    }
+
+    &:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(#000,.4);
+      z-index: 5;
+    }
+  }
+  &__head-copy {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 9;
+    transform: translateY(1.5rem);
+    h1,h3,p {
+      color: #fff!important;
+    }
+  }
+
+  &__proyecto {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all .2s;
+    &:hover {
+      box-shadow: 0 0 20px rgb(20 59 107 / 20%);
+      transform: translateY(-10px);
+    }
+    &:hover &-map {
+      filter: grayscale(0);
+    }
+    &:hover h5 {
+      background-size: 100% 100%;
+    }
+    &-map {
+      filter: grayscale(100%);
+      transition: all .2s;
+    }
+    &-info {
+      padding: .5rem 1rem;
+      
+      h5 {
+        background-image: -webkit-gradient(linear,left top,left bottom,color-stop(60%,transparent),color-stop(0,rgba(0,117,212,.4)));
+        background-image: -webkit-linear-gradient(top,transparent 60%,rgba(0,117,212,.4) 0);
+        background-image: linear-gradient(180deg,transparent 60%,rgba(0,117,212,.4) 0);
+        background-repeat: no-repeat;
+        font-size: 1rem;
+        font-weight: 600;
+        background-size: 0 100%;
+        -webkit-transition: all .9s;
+        transition: all .9s;
+        display: inline;
+        text-transform: uppercase;
+        color: #000;
+      }
+      p {
+        margin: 0;
+        font-size: 14px;
+        opacity: .8;
+      }
+    }
+  }
+
+  &__convocatorias {
+    margin: 3rem 0;
+
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 5rem;
+      -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: $primary-color;
+      margin-bottom: 2rem;
+    }
+  
+    .nav {
+      justify-content: center;
+    }
+    .nav-pills {
+      
+      .nav-link {
+        font-weight: 700;
+        color: $primary-color;
+      }
+    }
+    .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+      color: #fff;
+      background-color: $primary-color;
+    }
+
+    &-content {
+      width: 100%;
+     
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-gap: 20px;
+      justify-items: center;
+      cursor: pointer;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      margin: 0 auto 2rem;
+
+      a {
+        text-decoration: none;
+      }
+    }
+    &-box {
+      width: 300px;
+      height: 180px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h4 {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 20px;
+      }
+      p {
+        width: 100%;
+        font-size: 14px;
+        color: $primary-color;
+        margin: 0;
+      }
+      span {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: #9c9c9c;
+      }
+
+      &:hover {
+        background: $blue;
+        color: #fff;
+      }
+      &:hover h4 {
+        color: #fff;
+      }
+      &:hover p {
+        color: #fff;
+      }
+      &:hover span {
+        color: #fff;
+      }
+    }
+  }
+  @media only screen and (max-width: 1024px) {
+
+    &__proyectos {
+      grid-template-columns: repeat(2,1fr);
+    }
+    &__convocatorias {
+      
+      &-content {
+        grid-template-columns: repeat(3,1fr);
+      }
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    &__convocatorias {
+      
+      &-content {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    &__convocatorias {
+      
+      h3 {
+        font-size: 2.5rem;
+      }
+      &-content {
+        grid-template-columns: repeat(1,1fr);
+      }
+    }
+  }
+}
